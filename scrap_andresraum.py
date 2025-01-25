@@ -31,7 +31,7 @@ soup = BeautifulSoup(response, "html.parser")
 cal = Calendar()
 
 # Find calendar data (adjust the selectors as needed)
-calendar_entries = soup.find_all("table", class_="fc-scrollgrid-sync-table")  # Replace with actual class or tag
+calendar_table = soup.find_all("table", class_="fc-scrollgrid-sync-table")  # Replace with actual class or tag
 
 for entry in calendar_entries:
     print(entry)
@@ -52,3 +52,6 @@ with open("calendar.ics", "w", encoding="utf-8") as file:
     file.writelines(cal)
 
 print("Calendar saved as 'calendar.ics'")
+
+
+
